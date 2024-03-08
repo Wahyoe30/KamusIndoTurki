@@ -24,7 +24,7 @@ class _ListKamusState extends State<ListKamus> {
 
   Future<void> fetchKamus() async {
     try {
-      final response = await http.get(Uri.parse("192.168.1.50/KAMUS/kosakata.php"));
+      final response = await http.get(Uri.parse("http://192.168.1.50/KAMUS/kosakata.php"));
       final data = listKamusFromJson(response.body);
       setState(() {
         kamusList = data.results;
