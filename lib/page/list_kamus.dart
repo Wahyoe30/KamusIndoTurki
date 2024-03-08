@@ -24,7 +24,7 @@ class _ListKamusState extends State<ListKamus> {
 
   Future<void> fetchKamus() async {
     try {
-      final response = await http.get(Uri.parse("http://127.0.0.1:8000/api/dictionary"));
+      final response = await http.get(Uri.parse("192.168.1.50/KAMUS/kosakata.php"));
       final data = listKamusFromJson(response.body);
       setState(() {
         kamusList = data.results;
@@ -41,7 +41,7 @@ class _ListKamusState extends State<ListKamus> {
     setState(() {
       searchResults = kamusList
           .where((result) =>
-      result.kataJerman.toLowerCase().contains(query.toLowerCase()) ||
+      result.kataTurki.toLowerCase().contains(query.toLowerCase()) ||
           result.kataIndonesia.toLowerCase().contains(query.toLowerCase()))
           .toList();
     });
@@ -97,7 +97,7 @@ class _ListKamusState extends State<ListKamus> {
                         children: [
                           ListTile(
                             title: Text(
-                              "${data.kataJerman}",
+                              "${data.kataTurki}",
                               style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,

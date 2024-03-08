@@ -26,7 +26,7 @@ class ListKamus {
 
 class Result {
   String kataIndonesia;
-  String kataJerman;
+  String kataTurki;
   JenisKata jenisKata;
   String contohPenggunaan;
   String contohPenggunaanJerman;
@@ -34,7 +34,7 @@ class Result {
 
   Result({
     required this.kataIndonesia,
-    required this.kataJerman,
+    required this.kataTurki,
     required this.jenisKata,
     required this.contohPenggunaan,
     required this.contohPenggunaanJerman,
@@ -43,7 +43,7 @@ class Result {
 
   factory Result.fromJson(Map<String, dynamic> json) => Result(
     kataIndonesia: json["kata_indonesia"],
-    kataJerman: json["kata_jerman"],
+    kataTurki: json["kata_turki"],
     jenisKata: jenisKataValues.map[json["jenis_kata"]]!,
     contohPenggunaan: json["contoh_penggunaan"],
     contohPenggunaanJerman: json["contoh_penggunaan_jerman"],
@@ -52,7 +52,7 @@ class Result {
 
   Map<String, dynamic> toJson() => {
     "kata_indonesia": kataIndonesia,
-    "kata_jerman": kataJerman,
+    "kata_turki": kataTurki,
     "jenis_kata": jenisKataValues.reverse[jenisKata],
     "contoh_penggunaan": contohPenggunaan,
     "contoh_penggunaan_jerman": contohPenggunaanJerman,

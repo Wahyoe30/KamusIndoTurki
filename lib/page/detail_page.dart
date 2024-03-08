@@ -10,13 +10,13 @@ class DetailKamus extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(data!.kataJerman),
+        title: Text(data!.kataTurki),
         backgroundColor: Colors.blue[100],
       ),
       body: ListView(
         children: [
           ListTile(
-            title: Text(data?.kataJerman ?? "",
+            title: Text(data?.kataTurki ?? "",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16
